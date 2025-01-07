@@ -56,6 +56,14 @@ img.slider-img {
 .trending-wrapper {
     margin: 20px;
 }
+
+.detail-img {
+    height: 200px;
+}
+
+.search-box {
+    width: 500px !important;
+}
 </style>
 
 </html>
