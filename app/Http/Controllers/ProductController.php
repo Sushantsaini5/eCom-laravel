@@ -82,11 +82,15 @@ class ProductController extends Controller
         return redirect('/');
     }
     function myOrder(){
+        if(Session::has('user')){
         $userId=Session::get('user')['id'] ;
         $orders= DB::table('orders')
         ->join('product','orders.product_id','product.id')
         ->where('orders.user_id',$userId)
         ->get(); 
         return view('myorder',['orders'=>$orders]);
+        }else{
+            return redirect('/login');
+        }
     }
 }
